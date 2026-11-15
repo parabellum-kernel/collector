@@ -1,0 +1,14 @@
+.{
+    .name = .flowdata_collectors,
+    .version = "0.2.0",
+    .minimum_zig_version = "0.17.1",
+    .fingerprint = 0x3cdee6d6b644caa3,
+    .dependencies = .{},
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "common",
+        "file_watcher",
+        "webhook_receiver",
+    },
+}
