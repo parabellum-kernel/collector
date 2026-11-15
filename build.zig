@@ -18,7 +18,7 @@ pub fn build(b: *std.Build) void {
     });
     webhook_mod.addImport("collectors_common", common_mod);
     const webhook_exe = b.addExecutable(.{
-        .name = "flowdata-collector-webhook",
+        .name = "parabellum-collector-webhook",
         .root_module = webhook_mod,
     });
     b.installArtifact(webhook_exe);
@@ -31,7 +31,7 @@ pub fn build(b: *std.Build) void {
     });
     filewatcher_mod.addImport("collectors_common", common_mod);
     const filewatcher_exe = b.addExecutable(.{
-        .name = "flowdata-collector-filewatcher",
+        .name = "parabellum-collector-filewatcher",
         .root_module = filewatcher_mod,
     });
     b.installArtifact(filewatcher_exe);

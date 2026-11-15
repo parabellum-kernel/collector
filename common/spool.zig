@@ -21,7 +21,7 @@ const c = struct {
 };
 
 /// Persistent crash-safe FIFO queue backed by local disk storage.
-/// Used by collectors for store-and-forward resilience when Flowdata is down.
+/// Used by collectors for store-and-forward resilience when Parabellum is down.
 pub const SpoolQueue = struct {
     allocator: Allocator,
     spool_dir: []const u8,

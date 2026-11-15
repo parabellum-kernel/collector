@@ -16,7 +16,7 @@ pub const KeyValueParam = struct {
 };
 
 /// Universal Inbound Job Envelope (ARCH-019).
-/// Format accepted by Flowdata HTTP/RPC API (`POST /v1/jobs`) and emitted by all standalone collectors.
+/// Format accepted by Parabellum HTTP/RPC API (`POST /v1/jobs`) and emitted by all standalone collectors.
 pub const JobEnvelope = struct {
     id: []const u8,
     datasource: ?[]const u8 = null,

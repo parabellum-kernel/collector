@@ -1,5 +1,5 @@
 .{
-    .name = .flowdata_collectors,
+    .name = .parabellum_collectors,
     .version = "1.0.0",
     .minimum_zig_version = "0.17.1",
     .fingerprint = 0x3cdee6d6b644caa3,

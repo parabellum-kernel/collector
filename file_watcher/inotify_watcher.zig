@@ -93,7 +93,7 @@ pub const InotifyWatcher = struct {
         var event_buf: [8192]u8 align(@alignOf(c.struct_inotify_event)) = undefined;
 
         while (self.is_running.load(.acquire)) {
-            // Periodic flush attempt in case Flowdata reconnected
+            // Periodic flush attempt in case Parabellum reconnected
             _ = self.forwarder.flush() catch {};
 
             // Poll with 500ms timeout to maintain responsive signal handling and flushing
@@ -165,7 +165,7 @@ pub const InotifyWatcher = struct {
         if (res.delivered) {
             std.debug.print("[Watcher EVENT] Direct delivered job {s} for '{s}'\n", .{ job_id, full_target });
         } else {
-            std.debug.print("[Watcher EVENT] Flowdata offline. Spooled job {s} for '{s}' (spool count: {d})\n", .{
+            std.debug.print("[Watcher EVENT] Parabellum offline. Spooled job {s} for '{s}' (spool count: {d})\n", .{
                 job_id,
                 full_target,
                 self.forwarder.spool.count(),

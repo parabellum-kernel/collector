@@ -41,7 +41,7 @@ pub fn main(init: std.process.Init) !void {
 
     std.debug.print(
         \\=======================================================
-        \\ Flowdata File Watcher (ARCH-019 Standalone inotify)
+        \\ Parabellum File Watcher (ARCH-019 Standalone inotify)
         \\=======================================================
         \\ Watching:    {s}
         \\ Topic:       {s}
@@ -69,12 +69,12 @@ pub fn main(init: std.process.Init) !void {
 
 fn printUsage() void {
     std.debug.print(
-        \\Usage: flowdata-collector-watcher [options] --watch <path>
+        \\Usage: parabellum-collector-watcher [options] --watch <path>
         \\
         \\Options:
         \\  -w, --watch <path>       File or directory path to observe (required)
         \\  -t, --topic <name>       Topic identifier for emitted events (default: file_event)
-        \\  -e, --engine <url>       Flowdata engine URL (default: http://127.0.0.1:8080)
+        \\  -e, --engine <url>       Parabellum engine URL (default: http://127.0.0.1:8080)
         \\  -s, --spool-dir <path>   Local persistent disk spool directory (default: ./spool/watcher)
         \\  -h, --help               Show this help message
         \\

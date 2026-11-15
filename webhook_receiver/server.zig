@@ -6,7 +6,7 @@ const SpoolForwarder = common.SpoolForwarder;
 
 const c = std.c;
 
-/// Foreground HTTP server receiving webhooks and forwarding them to Flowdata with store-and-forward spooling.
+/// Foreground HTTP server receiving webhooks and forwarding them to Parabellum with store-and-forward spooling.
 pub const WebhookServer = struct {
     allocator: Allocator,
     host: []const u8,
@@ -67,7 +67,7 @@ pub const WebhookServer = struct {
         };
 
         while (self.is_running.load(.acquire)) {
-            // Periodic flush attempt in case Flowdata came back online
+            // Periodic flush attempt in case Parabellum came back online
             _ = self.forwarder.flush() catch {};
 
             // 500ms poll timeout for graceful shutdown on Ctrl+C and periodic flush

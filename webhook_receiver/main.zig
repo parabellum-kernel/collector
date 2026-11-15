@@ -37,7 +37,7 @@ pub fn main(init: std.process.Init) !void {
 
     std.debug.print(
         \\=======================================================
-        \\ Flowdata Webhook Collector (ARCH-019 Standalone Agent)
+        \\ Parabellum Webhook Collector (ARCH-019 Standalone Agent)
         \\=======================================================
         \\ Listening:   http://{s}:{d}
         \\ Forwarding:  {s}/v1/jobs
@@ -64,12 +64,12 @@ pub fn main(init: std.process.Init) !void {
 
 fn printUsage() void {
     std.debug.print(
-        \\Usage: flowdata-collector-webhook [options]
+        \\Usage: parabellum-collector-webhook [options]
         \\
         \\Options:
         \\  -p, --port <port>        Port to listen on (default: 9090)
         \\      --host <ip>          Host address to bind (default: 0.0.0.0)
-        \\  -e, --engine <url>       Flowdata engine URL (default: http://127.0.0.1:8080)
+        \\  -e, --engine <url>       Parabellum engine URL (default: http://127.0.0.1:8080)
         \\  -s, --spool-dir <path>   Local persistent disk spool directory (default: ./spool/webhook)
         \\  -h, --help               Show this help message
         \\

@@ -4,7 +4,7 @@ const JobEnvelope = @import("envelope.zig").JobEnvelope;
 
 const c = std.c;
 
-/// Lightweight HTTP client communicating from standalone collectors to the Flowdata engine.
+/// Lightweight HTTP client communicating from standalone collectors to the Parabellum engine.
 pub const EngineClient = struct {
     allocator: Allocator,
     engine_url: []const u8,
@@ -22,7 +22,7 @@ pub const EngineClient = struct {
         self.* = undefined;
     }
 
-    /// Pings the Flowdata engine (`/v1/health` or `/v1/jobs`) to verify connectivity.
+    /// Pings the Parabellum engine (`/v1/health` or `/v1/jobs`) to verify connectivity.
     pub fn isOnline(self: *EngineClient) bool {
         const parsed = parseHostPort(self.engine_url);
         const fd = connectToHost(self.allocator, parsed.host, parsed.port) orelse return false;
@@ -39,7 +39,7 @@ pub const EngineClient = struct {
         return (std.mem.indexOf(u8, resp_buf[0..@intCast(n)], "HTTP/1.") != null);
     }
 
-    /// Delivers a `JobEnvelope` to the Flowdata engine endpoint (`POST /v1/jobs`).
+    /// Delivers a `JobEnvelope` to the Parabellum engine endpoint (`POST /v1/jobs`).
     /// Returns `true` if delivered successfully, `false` if engine is unreachable.
     pub fn sendJob(self: *EngineClient, job: JobEnvelope) bool {
         const json_body = job.toJson(self.allocator) catch return false;

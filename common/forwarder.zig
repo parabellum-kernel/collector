@@ -4,7 +4,7 @@ const JobEnvelope = @import("envelope.zig").JobEnvelope;
 const SpoolQueue = @import("spool.zig").SpoolQueue;
 const EngineClient = @import("engine_client.zig").EngineClient;
 
-/// Orchestrates live delivery to Flowdata with automatic Store-and-Forward
+/// Orchestrates live delivery to Parabellum with automatic Store-and-Forward
 /// fallback to a local persistent disk spool when the engine is unreachable.
 pub const SpoolForwarder = struct {
     allocator: Allocator,
@@ -76,7 +76,7 @@ pub const SpoolForwarder = struct {
         return false;
     }
 
-    /// Drains the persistent disk spool in FIFO order while Flowdata is reachable.
+    /// Drains the persistent disk spool in FIFO order while Parabellum is reachable.
     /// Returns the number of jobs successfully flushed.
     pub fn flush(self: *SpoolForwarder) !usize {
         var flushed: usize = 0;
